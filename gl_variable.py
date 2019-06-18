@@ -13,8 +13,8 @@ average=0
 
 #########     Changeable variables       ############ maxcreature=10,foodcount=40,maxmovecount=20
 maxCreatures = 5   #max creatures 39
-food_count = 50
-max_life_cycle = 75
+food_count = 30
+max_life_cycle = 55
 maxMoveCount = 10
 
 ######       PY-Game variables   ###########
