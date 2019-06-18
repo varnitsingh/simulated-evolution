@@ -11,6 +11,7 @@ class creature:
         self.xNex = x
         self.yNex = y
         self.reproduction=0
+        self.color = blue
 
     def assign(self,initialPosCount):
         if initialPosCount < 10 :
@@ -27,12 +28,12 @@ class creature:
     def drawCreatures(self):
         drawLandscape()
         drawFood()
-        pygame.draw.rect(win, blue, (self.xCur * 50 + 50 + 5, self.yCur * 50 + 50 + 5, 40, 40))
+        pygame.draw.rect(win, self.color, (self.xCur * 50 + 50 + 5, self.yCur * 50 + 50 + 5, 40, 40))
 
     def calculateDrawCreature(self,flag=-1):      #asking for flag. If flag =1, move the creature
         if flag == -1:
             redrawGameWindow()
-            pygame.draw.rect(win,blue,(self.xInitial*50 + 50 + 5,self.yInitial*50 + 50 + 5,40,40))
+            pygame.draw.rect(win,self.color,(self.xInitial*50 + 50 + 5,self.yInitial*50 + 50 + 5,40,40))
         elif flag == 0:
             while self.xCur >= self.xNex:
                 self.xCur -= self.vel
