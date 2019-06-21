@@ -58,3 +58,17 @@ def drawGraph(xgraph,ygraph):
     pygame.draw.line(win,green,(previousXpos,previousYpos),((xgraph*4)+700,500-(ygraph*5)))
     previousXpos = (xgraph*4)+700
     previousYpos = 500-(ygraph*5)
+
+def drawDefaultScreen():
+    message("Space - Run simulation            Down Arrow Key - Instructions",300,620,white)
+    #pygame.draw.circle(win,(random.randint(0, 255), random.randint(0, 255), random.randint(0, 255)),(random.randint(0,1200),random.randint(0,650)),random.randint(1,100))
+    i=0
+    while (i<=15):
+        pygame.draw.line(win, (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255)),(0,620 + i),(295,620 + i))
+        pygame.draw.line(win, (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255)), (905, 620 + i),(1200, 620 + i))
+        pygame.draw.line(win, (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255)), (529, 620 + i),(595 , 620 + i))
+        i+= 3
+    i=0
+    while i<=10:
+        pygame.draw.line(win,(random.randint(0, 255), random.randint(0, 255), random.randint(0, 255)),(0,641 + i),(1200,641 + i))
+        i+=3

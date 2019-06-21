@@ -12,14 +12,14 @@ countLifeForGraph=0
 average=0
 
 #########     Changeable variables       ############ maxcreature=10,foodcount=40,maxmovecount=20
-maxCreatures = 5   #max creatures 39
-food_count = 30
-max_life_cycle = 55
-maxMoveCount = 10
+maxCreatures = 10   #max creatures 39
+food_count = 40
+max_life_cycle = 1
+maxMoveCount = 15
 
 ######       PY-Game variables   ###########
 clock = pygame.time.Clock()
-win = pygame.display.set_mode((1200,600))
+win = pygame.display.set_mode((1200,650))
 run = True
 font = pygame.font.SysFont(None,30)
 

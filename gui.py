@@ -1,9 +1,9 @@
-from main import main
+from main import *
 from tkinter import *
 from tkinter import messagebox
 from tkinter.font import Font
 def r():
-    m=  messagebox.askquestion("EXIT","Are u sure")
+    m = messagebox.askquestion("EXIT","Are u sure")
     if m=='yes':
         root.quit()
 def k():
@@ -36,9 +36,9 @@ c= Checkbutton(root,text="I know about the Application.",fg="blue",variable=i,fo
 c.pack()
 v=Label(root,text="Select one of them:",bg="black",fg="white",font=my)
 v.pack(fill=X)
-e= Button(root,text="Run using Default values.",fg="green",font=ny,command=k)
+e= Button(root,text="Run using Default values.",fg="green",font=ny,command=main(1))
 e.pack()
-d= Button(root,text="Run using your own values.",fg="purple",font=ny,command=k)
+d= Button(root,text="Run using your own values.",fg="purple",font=ny,command=main())
 d.pack()
 
 

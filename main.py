@@ -2,12 +2,15 @@ from creature import *
 pygame.display.set_caption("Simulated Evolution")
 
 #####   Main loop ######
-def main():
+def main(value=0):
+    value=value
     global food_count
     global run
     global maxCreatures
     global countLifeForGraph
     global average
+    global max_life_cycle
+    global maxMoveCount
     while run:
         clock.tick(20)
         for event in pygame.event.get():
@@ -15,8 +18,9 @@ def main():
                 run = False
         tempCountLifeCycle = 1
         count = 1
-        keys = pygame.key.get_pressed()#for starting the fooking program
-        while keys[pygame.K_DOWN] and count==1:
+        keys = pygame.key.get_pressed()#for starting the program
+        drawDefaultScreen()
+        while (keys[pygame.K_DOWN]) and count==1:
             win.fill(black)
             pygame.draw.circle(win,red,(100 + 5,100 + 5),6)
             message("Food Eaten by creature",120,100,white)
@@ -24,8 +28,9 @@ def main():
             message("Virtual depiction of Creature",120,135,white)
             pygame.display.update()
             count = 0
-        while (tempCountLifeCycle <= max_life_cycle) and keys[pygame.K_SPACE] :  #decides life cycles
-            print(maxCreatures)
+        while (tempCountLifeCycle <= max_life_cycle) and (keys[pygame.K_SPACE]):
+            #decides life cycles
+            value=0
             win.fill(black,(0,0,600,600))
             tempCountLifeCycle += 1    #updating loop
             tempCountCreatures = 0
@@ -44,7 +49,6 @@ def main():
                     CreatureObject.append(creature(9+1,-20+creatureInitialPosCount))  #will assign value from (9,1) to (9,9)
                 elif creatureInitialPosCount < 40:
                     CreatureObject.append(creature(39-creatureInitialPosCount,9+1))
-                print(tempCountCreatures)
                 CreatureObject[tempCountCreatures].assign(creatureInitialPosCount)
                 if creatureInitialPosCount == 39:
                     creatureInitialPosCount = -1
@@ -55,6 +59,7 @@ def main():
                 CreatureObject[tempCountCreatures].moveCreature()
                 creatureIncreased += CreatureObject[tempCountCreatures].reproduction
                 tempCountCreatures += 1  # updating loop
+                ### creature count loop over ###
             maxCreatures += creatureIncreased
             countLifeForGraph+=1
             drawGraph(countLifeForGraph,maxCreatures)
@@ -65,7 +70,8 @@ def main():
             message(averagestr,700,100,red)
             message(creaturestr,700,130,red)
             pygame.display.update()
-
+            ###  life cycle loop over   ###
+        pygame.display.update()
     pygame.quit()
+    ###  run loop over   ###
 ##### End of MAIN loop  ######
-main()
