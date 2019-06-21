@@ -2,8 +2,7 @@ from creature import *
 pygame.display.set_caption("Simulated Evolution")
 
 #####   Main loop ######
-def main(value=0):
-    value=value
+def main():
     global food_count
     global run
     global maxCreatures
@@ -30,7 +29,6 @@ def main(value=0):
             count = 0
         while (tempCountLifeCycle <= max_life_cycle) and (keys[pygame.K_SPACE]):
             #decides life cycles
-            value=0
             win.fill(black,(0,0,600,600))
             tempCountLifeCycle += 1    #updating loop
             tempCountCreatures = 0
@@ -75,3 +73,4 @@ def main(value=0):
     pygame.quit()
     ###  run loop over   ###
 ##### End of MAIN loop  ######
+main()
